@@ -5,6 +5,11 @@ import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+
+import javax.sql.DataSource;
+
+
 
 @Configuration
 //@ComponentScan(basePackages = {"contact.alex"})
@@ -20,8 +25,9 @@ public class SpringRootConfig {
         bs.setMaxTotal(2);
         bs.setInitialSize(1);
         bs.setTestOnBorrow(true);
-        bs.setValidationQuery("SELECT 1");
+        bs.setValidationQuery("SELECT 1 ");
         bs.setDefaultAutoCommit(true);
         return bs;
     }
 }
+
